@@ -1,0 +1,19 @@
+from itertools import product
+
+#Nomor kartu yang diketahui
+nomor_kartu = "21000000099"
+
+#Digit yang akan diisi
+digits = "01234567"
+
+#Mengambil dua anga depan dan dua angka belakang
+angka_depan = nomor_kartu[:2]
+angka_belakang = nomor_kartu [-2:]
+
+#Menghasikan semua kemungkinann untuk 7 digit angka tengah
+kemungkinan_angka_tengah =  [''.join(x) for x in product(digits, repeat=7)]
+
+#Mencetak semua kemungkinan nomor kartu
+for angka_tengah in kemungkinan_angka_tengah:
+    nomor_kartu_lengkap = angka_depan + angka_tengah + angka_belakang
+    print(nomor_kartu_lengkap)
